@@ -5,4 +5,4 @@ const UserController = require("../controllers/user.controller.js")
 
 myRoutes.post('/signup', validateUserInput, UserController.registerUser)
 myRoutes.post('/login', validateUserInput, UserController.logUser) 
-module.exports = myRoutes
+module.exports = myRoutes;
