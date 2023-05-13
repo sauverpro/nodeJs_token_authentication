@@ -1,8 +1,8 @@
 const joi = require("joi") // module for validating inputs
 const validateUserInput = (req, res, next) =>{
     const schema = joi.object({
-        username: joi.string().required().min(6),
-        password: joi.string().required().min(8)
+        username: joi.string().required().min(6), // checking username
+        password: joi.string().required().min(8) // checking password
     })
 
     const {error} = schema.validate(req.body) 
