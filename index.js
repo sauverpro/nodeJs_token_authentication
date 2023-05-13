@@ -37,7 +37,7 @@ app.post("/save",verifyToken, (req, res) => {
     });
   });
 });
-app.get("/view/:id", (req, res) => {
+app.get("/view/:id", (req, res) => { // view all users with id
   let id = req.params.id;
   connection.connect(() => {
     console.log("connected");
