@@ -5,14 +5,14 @@ const env = require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const verifyToken = require("./middlewares/tokenCheck")
 
-const userRoutes= require("./routes/users.route.js")
+const userRoutes= require("./routes/users.route.js") //this is the users routes for login and signup
 // const { connection } = require("./config/db.config.js")
 const port = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use("/signup", userRoutes);
-app.use("/login", userRoutes);
+app.use("/signup", userRoutes); // signup endpoint 
+app.use("/login", userRoutes); // login endpoint 
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
