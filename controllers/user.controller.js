@@ -1,6 +1,6 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt"); // hashing module
 const jwt = require("jsonwebtoken");
-const mysql = require("mysql");
+const mysql = require("mysql"); // mysql module 
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
 // Class contains all user controller functions
 
 class UserController {
-  static async registerUser(req, res) {
+  static async registerUser(req, res) { // register 
     const { username, password } = req.body;
     const salt = await bcrypt.genSalt(10);
 
@@ -31,7 +31,7 @@ class UserController {
       res.status(400).json({ status: 400, message: error.message });
     }
   }
-  static async logUser(req, res) {
+  static async logUser(req, res) { // Login
     const { username, password } = req.body;
     try {
       connection.connect(async () => {
